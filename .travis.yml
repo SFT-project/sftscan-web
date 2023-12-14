@@ -1,0 +1,19 @@
+language: node_js
+
+sudo: true
+
+env:
+  - NODE_ENV=production CI=true
+
+node_js:
+  - "10"
+
+services:
+  - docker
+
+install:
+  - yarn global add typescript@3.8
+  - yarn --production=false
+
+script:
+  - yarn build

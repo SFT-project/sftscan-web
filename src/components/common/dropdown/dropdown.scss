@@ -1,0 +1,90 @@
+@import '../../../assets/styles/base/variables';
+
+// #DROPDOWN
+//-------------------------------------
+$dropdown-button-color: #999999;
+$dropdown-button-hover-color: #ffffff;
+$dropdown-option-color: #333333;
+$dropdown-dropdown-bg: #ffffff;
+$dropdown-option-hover-bg: #f1f1f1;
+
+.bi-dropdown {
+  position: relative;
+  font-family: $theme-main-font;
+
+  // [ Components ]
+  //-----------------------------------------
+  &__button {
+    color: $dropdown-button-color;
+    font-family: inherit;
+
+    padding: $grid-offset-step * 2;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+
+    align-items: center;
+
+    &:hover {
+      color: $dropdown-button-hover-color;
+    }
+  }
+
+  &__button:hover & {
+    &__button-icon {
+      opacity: 1;
+    }
+  }
+
+  &__button-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: $grid-offset-step;
+
+    opacity: .6;
+  }
+
+  &__dropdown {
+    font-family: inherit;
+    border-radius: 10px;
+
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: $dropdown-dropdown-bg;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.25);
+    padding: ($grid-offset-step * 2) 0;
+    overflow: hidden;
+  }
+
+  &__option {
+    font-family: inherit;
+
+    display: block;
+    padding: $grid-offset-step * 3 $grid-offset-step * 4;
+    color: $dropdown-option-color;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: bold;
+    text-align: left;
+
+    &:hover {
+      background-color: $dropdown-option-hover-bg;
+    }
+  }
+
+  // [ State ] Open
+  &--open & {
+    &__dropdown {
+      display: block;
+    }
+
+    &__button {
+      color: $dropdown-button-hover-color;
+    }
+
+    &__button-icon {
+      opacity: 1;
+    }
+  }
+}

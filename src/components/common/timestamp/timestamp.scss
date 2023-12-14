@@ -1,0 +1,26 @@
+@import '../../../assets/styles/base/variables';
+
+// #TIMESTAMP
+//-------------------------------------
+$timestamp-time-color: $theme-primary-color;
+$timestamp-date-color: #828795;
+
+.bi-timestamp {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  &__time {
+    margin-right: $grid-offset-step;
+    color: $timestamp-time-color;
+  }
+
+  &__date {
+    color: $timestamp-date-color;
+  }
+
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}

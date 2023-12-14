@@ -1,0 +1,14 @@
+{
+  "short_name": "SFTChain Explorer",
+  "name": "SFTChain Explorer",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "orientation": "portrait",
+  "background-color": "#f8f8f8",
+  "display": "standalone"
+}

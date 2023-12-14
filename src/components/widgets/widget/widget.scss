@@ -1,0 +1,23 @@
+@import '../../../assets/styles/base/variables';
+
+// #WIDGET
+//-------------------------------------
+
+$widget-bg: #ffffff;
+
+.bi-widget {
+  background-color: $widget-bg;
+  border-radius: 12px;
+  padding: $grid-offset-step * 6;
+  box-sizing: border-box;
+  min-height: 620px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: $mobile-device-width) {
+  .bi-widget {
+    min-height: 400px;
+  }
+}

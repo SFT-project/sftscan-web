@@ -1,0 +1,78 @@
+@import '../../assets/styles/base/variables';
+
+// #TRANSACTION
+//-------------------------------------
+$transactions-subtitle-color: #828795;
+$error-text-color: #721c24;
+$error-bg-color: #f8d7da;
+$error-border-color: #f5c6cb;
+
+.bi-transaction {
+  padding: ($grid-offset-step * 10) ($grid-offset-step * 15);
+  font-family: $theme-main-font;
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__tables {
+    margin: $grid-offset-step * 10 (-($grid-offset-step * 5)) 0;
+
+    flex-wrap: wrap;
+  }
+
+  &__table {
+    min-width: 300px;
+    margin: ($grid-offset-step * 2) ($grid-offset-step * 5);
+  }
+
+  &__body {
+    margin-top: $grid-offset-step * 10;
+  }
+
+  &__scripts {
+    margin-top: $grid-offset-step * 12;
+  }
+
+  &__subtitle {
+    color: $transactions-subtitle-color;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &__error {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid $error-border-color;
+    border-radius: 0.25rem;
+    color: $error-text-color;
+    background-color: $error-bg-color;
+  }
+}
+
+@media screen and (max-width: $laptop-device-width) {
+  .bi-transaction {
+    padding: ($grid-offset-step * 5) ($grid-offset-step * 5);
+
+    &__error {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-device-width) {
+  .bi-transaction {
+    padding: ($grid-offset-step * 5) ($grid-offset-step * 0);
+
+    &__header,
+    &__body {
+      padding: 0 ($grid-offset-step * 3);
+    }
+  }
+}

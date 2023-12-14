@@ -1,0 +1,52 @@
+// @import '../fonts/nimbus/stylesheet.css';
+
+@import 'base/normalize';
+@import 'base/grid';
+@import 'base/table';
+@import 'base/utils';
+
+@import 'components/default';
+@import 'components/buttons';
+@import 'components/modal';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.text-gray {
+  color: #bbbbbb;
+}
+
+.copy-label {
+  font-family: sans-serif;
+  padding: 4px 6px;
+  width: 60px;
+  height: 24px;
+  background: #F3F3F3;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #666666;
+  border-color: transparent;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+  }
+}
+
+.text-error {
+  color: rgb(226, 101, 101);
+}

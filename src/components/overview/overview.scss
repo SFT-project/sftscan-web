@@ -1,0 +1,44 @@
+@import '../../assets/styles/base/variables';
+
+
+.overview {
+  width: calc(100vw - 100px);
+  height: 176px;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-top: 60px;
+  margin-bottom: -85px;
+  border-radius: 14px;
+  overflow: hidden;
+  
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    width: 33%;
+    padding: 24px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(241, 241, 241, 1);
+    border-left: 1px solid rgba(241, 241, 241, 1);
+
+    &>div {
+      margin-left: 16px;
+      p {
+        color: rgba(24, 23, 25, 0.4);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+
+        &:last-child {
+          color: #181719;
+          font-family: DIN Alternate;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "common": {
+    "block": {
+      "adProofsRoot": "AD Proofs Root",
+      "age": "Timestamp",
+      "block": "Block",
+      "difficulty": "Difficulty",
+      "powSolutions": "PoW Solutions",
+      "extensionHash": "Extension Hash",
+      "height": "Block",
+      "id": "ID",
+      "votes": "Votes",
+      "minedBy": "Mined by",
+      "miner": "Miner",
+      "blockReward": "Block Reward",
+      "totalDifficulty": "Total Difficulty",
+      "minerReward": "Reward",
+      "nBits": "Bits",
+      "parent": "Previous Block",
+      "size": "Size",
+      "gasUsed": "Gas Used",
+      "gasLimit": "Gas Limit",
+      "sha3Uncles": "Sha3Uncles",
+      "extraData": "Extra Data",
+      "stateRoot": "State Root",
+      "transactions": "Txn",
+      "transactionsRoot": "Transactions Root",
+      "version": "Version",
+      "headerId": "Header ID",
+      "digest": "Digest",
+      "fields": "Fields"
+    },
+    "transaction": {
+      "transaction": "Transaction",
+      "txHash": "Transaction Hash",
+      "status": "Status",
+      "block": "Block",
+      "timestamp": "Timestamp",
+      "from": "From",
+      "to": "To",
+      "value": "Value",
+      "transactionFee": "Transaction Fee",
+      "nonce": "Nonce",
+      "inputData": "Input Data"
+    },
+    "token": {
+      "name": "Name",
+      "id": "Id",
+      "amount": "Amount",
+      "decimals": "Decimals",
+      "description": "Description",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "token": "Token",
+      "back": "Back",
+      "tokenOverview": "Token Overview",
+      "emissionAmount": "Emission Amount",
+      "type": "Type"
+    },
+    "pages": {
+      "address": {
+        "title": "SFTChain Explorer | Address {id}"
+      },
+      "api": {
+        "title": "SFTChain Explorer | API"
+      },
+      "block": {
+        "title": "SFTChain Explorer | Block {id}"
+      },
+      "token": {
+        "title": "SFTChain Explorer | Token {id}"
+      },
+      "unconfirmed-transaction": {
+        "title": "SFTChain Explorer | Transaction {id}"
+      },
+      "chart": {
+        "title": {
+          "block-size": "SFTChain Explorer | Average Block Size",
+          "blockchain-size": "SFTChain Explorer | Blockchain Size",
+          "difficulty": "SFTChain Explorer | Difficulty",
+          "hash-rate": "SFTChain Explorer | Hash Rate",
+          "hash-rate-distribution": "SFTChain Explorer | Hash Rate Distribution",
+          "miners-revenue": "SFTChain Explorer | Miners Revenue",
+          "total": "SFTChain Explorer | Coins in Circulation",
+          "transactions-per-block": "SFTChain Explorer | Transactions per Block"
+        }
+      },
+      "charts": {
+        "title": "SFTChain Explorer | Charts"
+      },
+      "data": {
+        "title": "SFTChain Explorer | Data"
+      },
+      "not-found": {
+        "title": "SFTChain Explorer | Not found"
+      },
+      "stats": {
+        "title": "SFTChain Explorer | Stats"
+      },
+      "transaction": {
+        "title": "SFTChain Explorer | Transaction {id}"
+      },
+      "wallet": {
+        "title": "SFTChain Explorer | Wallet"
+      },
+      "order-book": {
+        "title": "SFTChain Explorer | Order Book"
+      },
+      "issued-tokens": {
+        "title": "SFTChain Explorer | Issued Tokens"
+      },
+      "unconfirmed-transactions": {
+        "title": "SFTChain Explorer | Mempool"
+      }
+    },
+    "stats": {
+      "hashRate": "Hash Rate",
+      "marketCap": "Market Cap",
+      "supply": "Circulating Supply",
+      "transactionAverage": "Tx per Day",
+      "version": "Protocol",
+      "max-supply": "Max Supply"
+    },
+    "charts": {
+      "view": "View Chart"
+    },
+    "navigation": {
+      "home": "Home",
+      "blockchain": "Blockchain",
+      "resources": "Resources",
+      "latest-blocks": "Latest Blocks",
+      "mempool": "Mempool",
+      "oracle-pools": "Oracle Pools",
+      "statistics": "Statistics",
+      "charts": "Charts",
+      "stats": "Stats",
+      "tokens": "Tokens",
+      "issued-tokens": "Issued Tokens",
+      "rich-list": "Rich List",
+      "more": "More",
+      "wallets": "Wallets",
+      "api": "API",
+      "monitor": "Difficulty & Epoch monitor",
+      "SFTChain-watch": "SFTChain Watch"
+    }
+  },
+  "components": {
+    "address-actions": {
+      "donation-button": "Donation Button",
+      "qrcode": "QR Code",
+      "request-payment": "Request Payment"
+    },
+    "address-qr-code-modal": {
+      "subtitle": "Scan for Address",
+      "title": "QR Code"
+    },
+    "overview": {
+      "totalSupply": "TOTAL SUPPLY",
+      "transactions": "TRANSACTIONS",
+      "gasPrice": "MED GAS PRICE",
+      "circulation": "CIRCULATION",
+      "block": "LAST FINALIZED BLOCK",
+      "safeBlock": "LAST SAFE BLOCK",
+      "chainInfo": "SFT Protocol Chain Explorer"
+    },
+    "address-summary": {
+      "hash": "Address",
+      "title": "Summary"
+    },
+    "address-transactions": {
+      "confirmedBalance": "Final balance",
+      "title": "Transactions",
+      "confirmed": "No. transactions",
+      "totalReceived": "Total received",
+      "tokens": "Tokens",
+      "show": "Show"
+    },
+    "address-issued-tokens": {
+      "title": "Issued Tokens",
+      "allTokens": "All Tokens"
+    },
+    "address": {
+      "title": "{coinName} Address"
+    },
+    "block-header": {
+      "adproofs": "AD Proofs",
+      "back": "Back to all blocks",
+      "information": "Information",
+      "transactions": "Transactions",
+      "extension": "Extension"
+    },
+    "block-summary": {
+      "averageMiningTime": "Average mining time",
+      "minutes": "min",
+      "title": "Block Summary",
+      "total": "Blocks Mined",
+      "totalCoins": "Coins mined"
+    },
+    "chart-actions": {
+      "csv": "CSV",
+      "json": "JSON",
+      "linear-scale": "Linear Scale",
+      "logarithmic-scale": "Logarithmic Scale"
+    },
+    "chart": {
+      "back": "Back to charts",
+      "hash-rate-distribution": {
+        "labels": {
+          "name": "Miner",
+          "value": "Blocks"
+        }
+      },
+      "subtitle": {
+        "block-size": "The average block size",
+        "blockchain-size": "The total size of all blocks",
+        "difficulty": "A relative measure of how difficult it is to find a new block",
+        "hash-rate": "The estimated number of hashes per second the network is performing",
+        "hash-rate-distribution": "An estimation of hashrate distribution amongst the largest miners",
+        "miners-revenue": "Total value of coinbase block rewards and transaction fees paid to miners",
+        "total": "The total number of coins that have already been mined",
+        "transactions-per-block": "The average number of transactions per block"
+      },
+      "title": {
+        "block-size": "Average block size",
+        "blockchain-size": "Blockchain Size",
+        "difficulty": "Difficulty",
+        "hash-rate": "Hash Rate",
+        "hash-rate-distribution": "Hash Rate Distribution",
+        "miners-revenue": "Miners Revenue",
+        "total": "Coins in circulation",
+        "transactions-per-block": "Transactions per Block"
+      }
+    },
+    "charts": {
+      "block-details": "Block Details",
+      "currency-statistics": "Currency Statistics",
+      "mining-information": "Mining Information",
+      "title": "Charts"
+    },
+    "data": {
+      "show": "Show",
+      "title": "Latest blocks",
+      "wrong-query": "No blocks have been found. Try different dates"
+    },
+    "home": {
+      "title": "Blockchain explorer"
+    },
+    "language-switcher": {
+      "en": "English",
+      "ru": "Русский",
+      "id": "Indonesian",
+      "tr": "Türkçe"
+    },
+    "mining-cost": {
+      "costPerTransaction": "Cost per Transaction",
+      "difficulty": "Difficulty",
+      "hashRate": "Hash Rate",
+      "percentEarnedTransactionsFees": "% Earned From Transaction Fees",
+      "percentTransactionVolume": "% Of Transaction Volume",
+      "title": "Mining Cost",
+      "totalMinersRevenue": "Total Miners Revenue"
+    },
+    "not-found": {
+      "title": "Not found"
+    },
+    "paginate-simple": {
+      "page": "Page {current}",
+      "page-of": "Page {current} of {total}"
+    },
+    "paginate": {
+      "next": "Next",
+      "prev": "Previous"
+    },
+    "payment-request-modal": {
+      "amount": "Amount",
+      "copied": "Copied",
+      "copy": "Copy",
+      "description": "Description",
+      "link": "Payment Request Link",
+      "subtitle": "Use this form to customize an address for payment request",
+      "title": "Create Payment Request"
+    },
+    "payment-request": {
+      "copied": "Copied",
+      "copy": "Copy",
+      "for": "For",
+      "subtitle": "You can send {coinName} to the following address",
+      "title": "Payment Request"
+    },
+    "search-results": {
+      "no-results": "Unrecognized search pattern. Please try searching by entering address, block hash or transaction hash",
+      "wrong-query": "Unrecognized search pattern. Search query should be at least 5 characters long"
+    },
+    "sidebar-menu": {
+      "items": {
+        "api": "API",
+        "api-addresses": "Addresses",
+        "api-blocks": "Blocks",
+        "api-charts": "Charts",
+        "api-statistics": "Statistics",
+        "api-transactions": "Transactions",
+        "api-utilities": "Utilities",
+        "charts": "Charts",
+        "data": "Data",
+        "stats": "Stats",
+        "wallet": "Wallets",
+        "order-book": "Order Book",
+        "issued-tokens": "Issued Tokens",
+        "unconfirmed": "Mempool",
+        "oraclePools": "Oracle Pools",
+        "watch": "SFTChain Watch",
+        "diff": "Difficulty & Epoch monitor"
+      }
+    },
+    "stats": {
+      "subtitle": "Summary of statistics for the previous 24 hour period",
+      "title": "{coinName} Stats"
+    },
+    "timespan": {
+      "span": {
+        "180days": "180 Days",
+        "1year": "1 Year",
+        "2years": "2 Years",
+        "30days": "30 Days",
+        "60days": "60 Days",
+        "alltime": "All Time"
+      }
+    },
+    "transaction-io-summary": {
+      "feePerByte": "Fee per Byte",
+      "hideScripts": "Hide scripts & coinbase",
+      "scripts": "Scripts",
+      "showScripts": "Show scripts & coinbase",
+      "title": "Inputs and Outputs",
+      "totalCoinsTransferred": "Total Coins Transferred",
+      "totalFee": "Fees"
+    },
+    "transaction-item": {
+      "address-output": "Output",
+      "confirmation": {
+        "one": "confirmation",
+        "other": "confirmations"
+      },
+      "null-address": "Unable to decode address",
+      "spent": "Spent",
+      "unconfirmed": "Unconfirmed",
+      "unspent": "Unspent",
+      "show-less": "Show less",
+      "show-more": "Show more"
+    },
+    "transaction-summary": {
+      "blocks": "Included in Blocks",
+      "confirmationsCount": "Confirmations",
+      "size": "Size",
+      "timestamp": "Received Time",
+      "title": "Summary"
+    },
+    "transaction": {
+      "scripts": {
+        "input": "Input",
+        "output": "Output"
+      },
+      "subtitle": "View information about a SFTChain transaction",
+      "title": "Transaction",
+      "error-message": "Transaction with this ID was not found, or it has not entered Mempool yet"
+    },
+    "transactions-summary": {
+      "title": "Transactions Summary",
+      "total": "Number of Transactions",
+      "totalFee": "Total Transaction Fees",
+      "totalOutput": "Total Output Volume"
+    },
+    "wallet": {
+      "title": "Wallet is not available yet"
+    },
+    "widget": {
+      "view-all-charts": "View all Charts",
+      "view-all-blocks": "View all Blocks",
+      "view-all": "View all"
+    },
+    "order-book": {
+      "title": "Order Book"
+    },
+    "issued-tokens": {
+      "title": "Issued Tokens"
+    },
+    "unconfirmed-transactions": {
+      "title": "Mempool",
+      "inputs-quantity": "Inputs",
+      "outputs-quantity": "Outputs",
+      "creation-timestamp": "Timestamp"
+    },
+    "unconfirmed-transaction": {
+      "title": "Transaction",
+      "subtitle": "View information about a SFTChain transaction",
+      "error-message": "Transaction with this ID was not found, or it has not entered Mempool yet"
+    }
+  }
+}
