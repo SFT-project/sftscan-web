@@ -53,9 +53,11 @@ class UnconfirmedTransactions extends React.PureComponent<IDataProps> {
   }
 
   render(): JSX.Element {
+    console.log(this.props.txsList.data,'this.props.txsList.data');
+    
     return (
       <div className="bi-data g-flex-column g-flex-column__item-fixed">
-        <FormattedMessage id="common.pages.unconfirmed-transactions.title">
+        <FormattedMessage id="common.transaction.transaction">
           {(title) => (
             <Helmet>
               <title>{title}</title>
@@ -65,7 +67,7 @@ class UnconfirmedTransactions extends React.PureComponent<IDataProps> {
 
         <div className="bi-data__header g-flex-column__item-fixed g-flex">
           <div className="bi-data__title g-flex__item">
-            <FormattedMessage id="components.unconfirmed-transactions.title" />
+            <FormattedMessage id="common.transaction.transaction" />
           </div>
         </div>
 
@@ -74,25 +76,25 @@ class UnconfirmedTransactions extends React.PureComponent<IDataProps> {
         )}
 
         {!this.props.txsList.isFetching &&
-          this.props.txsList.data?.items?.length === 0 && (
+          this.props.txsList.data?.list?.length === 0 && (
             <div className="bi-data__body g-flex-column__item-fixed">
-              No transactions in mempool
+              No transactions 
             </div>
           )}
 
         {!this.props.txsList.isFetching &&
           this.props.txsList.data !== null &&
-          this.props.txsList.data.items.length > 0 && (
+          this.props.txsList.data.list.length > 0 && (
             <div className="bi-data__body g-flex-column__item-fixed">
               <UnconfirmedTransactionsTableComponent
-                transactions={this.props.txsList.data.items}
+                transactions={this.props.txsList.data.list}
                 isFetching={this.props.txsList.isFetching}
               />
             </div>
           )}
 
         {this.props.txsList.data !== null &&
-          this.props.txsList.data.items.length > 0 && (
+          this.props.txsList.data.list.length > 0 && (
             <div className="bi-data__footer g-flex-column__item-fixed g-flex">
               <div className="g-flex__item-fixed">
                 <LimitSelectorComponent

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { FullAddressTransactions } from '../../../models/generated/fullAddressTransactions';
@@ -6,7 +6,7 @@ import { FullAddressTransactions } from '../../../models/generated/fullAddressTr
 import './address-transactions.scss';
 
 import { CoinValueComponent } from '../../common/coin-value/coin-value.component';
-import { AddressIssuedTokensModalComponent } from 'src/components/modals/address-issued-tokens-modal/address-issued-tokens-modal.component';
+// import { AddressIssuedTokensModalComponent } from 'src/components/modals/address-issued-tokens-modal/address-issued-tokens-modal.component';
 
 interface AddressTransactionsProps {
   summary: FullAddressTransactions;
@@ -17,8 +17,7 @@ export const AddressTransactionsComponent = ({
   summary,
   total,
 }: AddressTransactionsProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
   return (
     <div className="bi-address-transactions">
       <div className="bi-address-transactions__header">
@@ -42,7 +41,7 @@ export const AddressTransactionsComponent = ({
           </div>
 
           <div className="bi-address-transactions__cell bi-table__cell">
-            <CoinValueComponent value={summary.confirmed.nanoErgs} />
+            <CoinValueComponent value={parseInt(summary.result,16)} />
           </div>
         </div>
 
@@ -51,32 +50,18 @@ export const AddressTransactionsComponent = ({
             <FormattedMessage id="components.address-transactions.tokens" />
           </div>
 
-          <div className="bi-address-transactions__cell bi-table__cell">
-            {!summary.confirmed.tokens?.length ? (
-              'None'
-            ) : (
-              <button
-                className="bi-address-actions__btn bi-btn"
-                onClick={() => setIsModalOpen(true)}
-              >
-                <FormattedMessage id="components.address-transactions.show" />
-              </button>
-            )}
-          </div>
         </div>
       </div>
 
-      {summary.confirmed.tokens?.length !== 0 && (
-        <div className="bi-address-issued-tokens__btn-container g-flex">
+      {/* <div className="bi-address-issued-tokens__btn-container g-flex">
           <div className="bi-address-issued-tokens__item g-flex__item-fixed"></div>
 
           <AddressIssuedTokensModalComponent
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
-            issuedTokens={summary.confirmed.tokens}
+            issuedTokens={summary.result}
           />
-        </div>
-      )}
+        </div> */}
     </div>
   );
 };

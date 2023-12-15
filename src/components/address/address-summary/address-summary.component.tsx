@@ -15,7 +15,7 @@ export const AddressSummaryComponent = (props: IAddressSummaryProps) => {
   return (
     <div className="bi-address-summary">
       <div className="bi-address-summary__header">
-        <FormattedMessage id="components.address-summary.title" />
+        <FormattedMessage id="common.address.address" />
       </div>
 
       <div className="bi-address-summary__body bi-table">

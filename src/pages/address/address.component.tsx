@@ -87,7 +87,7 @@ class Address extends React.PureComponent<
         <div className="bi-address__header">
           <div className="bi-address__title">
             <FormattedMessage
-              id="components.address.title"
+              id="common.address.address"
               values={{
                 coinName: environment.blockchain.coinName.toUpperCase(),
               }}
@@ -102,7 +102,6 @@ class Address extends React.PureComponent<
 
   private renderBody(): JSX.Element | null {
     const { match, address, transactions } = this.props;
-
     if (this.props.fetching) {
       // TODO: Add nice loader
       return <p className="bi-address__fetching-text">Fetching data...</p>;

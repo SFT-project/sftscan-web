@@ -34,4 +34,5 @@ export interface Transaction {
   numConfirmations?: number;
   confirmationsCount?: number;
   size?: number;
+  list:any[]
 }

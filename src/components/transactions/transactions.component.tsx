@@ -1,37 +1,25 @@
 import React from 'react';
 
 import { AddressId } from '../../models/generated/addressId';
-import { Transaction } from '../../models/generated/transaction';
-
-// import { TransactionsItemComponent } from './transactions-item/transactions-item.component';
+// import { Transaction } from '../../models/generated/transaction';
 
 import './transactions.scss';
+import { UnconfirmedTransactionsTableComponent } from '../unconfirmed-transactions-table/unconfirmed-transactions-table.component';
 
 interface BlockTransactionProps {
-  transactions: Transaction[];
+  transactions: any;
   address?: AddressId;
 }
 
 export class TransactionsComponent extends React.PureComponent<BlockTransactionProps> {
-  
-  render(): JSX.Element {
-  console.log(this.props.transactions,'this.props.transactions');
 
+  render(): JSX.Element {
     return (
       <div className="bi-transactions">
-        123
-        {/* {this.props.transactions.map((transaction) => {
-          return (
-            <TransactionsItemComponent
-              key={transaction.id}
-              transaction={transaction}
-              address={this.props.address}
-              confirmations={
-                transaction.numConfirmations || transaction.confirmationsCount
-              }
-            />
-          );
-        })} */}
+        <UnconfirmedTransactionsTableComponent
+          transactions={this.props.transactions.list}
+          isFetching={this.props.transactions.isFetching}
+        />
       </div>
     );
   }

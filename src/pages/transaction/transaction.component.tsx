@@ -195,7 +195,6 @@ const ConfirmedTransaction = (props: any) => {
         </FormattedMessage>
         <div className="bi-transaction-header__title g-flex__item-fixed">
           <FormattedMessage id="common.transaction.transaction" />{' '}
-          <span>#{match.params.id}</span>
         </div>
           {renderBody}
       </div>

@@ -22,8 +22,6 @@ export const TransactionActions: TransactionActions = {
 
       TransactionApiService.getTransaction(id)
         .then((data: any) => {
-          console.log(data,'data');
-          
           dispatch({
             payload: {
               data,

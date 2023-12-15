@@ -11,23 +11,32 @@ export class AddressApiService {
 
   static getAddress(id: string): any {
     return axios
-      .get(`${environment.apiUrlV1}/addresses/${id}/balance/total`)
+      .get(`${environment.apiUrlV1}/balance`,{
+        params:{
+          addr:id
+        }
+      })
       .then((response: AxiosResponse) => {
         if (!response) {
           return Promise.reject(
             `Address api service. Request: ${environment.apiUrlV1}/addresses/${id}/balance/total.`
           );
         }
-
+        console.log(response.data);
+        
         return response.data;
       });
   }
 
   static getConfirmed(id: string, params: any) {
     return axios
-      .get(`${environment.apiUrlV1}/addresses/${id}/transactions`, {
-        params,
-      })
+    .get(`${environment.apiUrlV1}/pageAddrTxs`, {
+      params:{
+        pageIndex:params.offset || 1,
+        pageCount:params.limit,
+        addr:id
+      },
+    })
       .then((response: AxiosResponse) => {
         if (!response) {
           return Promise.reject(
@@ -41,8 +50,12 @@ export class AddressApiService {
 
   static getUnconfirmed(id: string, params: any) {
     return axios
-      .get(`${environment.apiUrlV1}/mempool/transactions/byAddress/${id}`, {
-        params,
+      .get(`${environment.apiUrlV1}/pageAddrTxs`, {
+        params:{
+          pageIndex:params.offset || 1,
+        pageCount:params.limit,
+          addr:id
+        },
       })
       .then((response: AxiosResponse) => {
         if (!response) {
@@ -61,38 +74,36 @@ export class AddressApiService {
 
     if (unconfirmed.total === 0 || unconfirmed.total < offset) {
       const confirmed = await this.getConfirmed(id, {
-        offset: offset - unconfirmed.total,
+        offset: offset ,
         limit,
       });
 
       return {
-        items: confirmed.items,
-        total: unconfirmed.total + confirmed.total,
+        items: confirmed.list,
+        total:  confirmed.total,
       };
     }
-
-    if (unconfirmed.items.length < limit) {
-      const newLimit = limit - unconfirmed.items.length;
+    console.log(unconfirmed,'unconfirmed');
+    
+    if (unconfirmed.list.length < limit) {
+      const newLimit = limit - unconfirmed.list.length;
 
       const confirmed = await this.getConfirmed(id, {
-        offset: 0,
+        offset: 1,
         limit: newLimit,
       });
 
       return {
-        items: [...unconfirmed.items, ...confirmed.items],
-        total: unconfirmed.total + confirmed.total,
+        items: confirmed,
+        total:  confirmed.total,
       };
     }
 
-    const confirmed = await this.getConfirmed(id, {
-      offset: 0,
-      limit: 1,
-    });
+ 
 
     return {
-      items: [...unconfirmed.items],
-      total: unconfirmed.total + confirmed.total,
+      items: unconfirmed,
+      total: unconfirmed.total ,
     };
   }
 

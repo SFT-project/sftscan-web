@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 
 import { PaymentRequestModalComponent } from '../../modals/payment-request-modal/payment-request-modal.component';
 
@@ -33,14 +33,14 @@ export class AddressRequetsPaymentActionComponent extends React.Component<
   render(): JSX.Element {
     return (
       <div className="bi-address-actions g-flex">
-        <div className="bi-address-actions__item g-flex__item-fixed">
+        {/* <div className="bi-address-actions__item g-flex__item-fixed">
           <button
             className="bi-address-actions__btn"
             onClick={this.openModal(PAYMENT_REQUEST_MODAL_STATE_KEY)}
           >
             <FormattedMessage id="components.address-actions.request-payment" />
           </button>
-        </div>
+        </div> */}
 
         <PaymentRequestModalComponent
           isOpen={this.state[PAYMENT_REQUEST_MODAL_STATE_KEY]}

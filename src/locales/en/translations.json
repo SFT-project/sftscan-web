@@ -43,6 +43,9 @@
       "nonce": "Nonce",
       "inputData": "Input Data"
     },
+    "address":{
+      "address":"Address"
+    },
     "token": {
       "name": "Name",
       "id": "Id",

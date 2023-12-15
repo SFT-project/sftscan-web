@@ -1,11 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { formatNumberMetricPrefix } from '../../utils/formatNumberMetricPrefix';
 
 import './unconfirmed-transactions-table.scss';
 import { UnconfirmedTransactionsTableHeaderComponent } from './unconfirmed-transactions-header/unconfirmed-transactions-table-header.component';
-import { TimestampComponent } from '../common/timestamp/timestamp.component';
 import { Link } from 'react-router-dom';
+import { ellipsis } from 'src/utils/formatter';
 
 interface UnconfirmedTransactionsTableProps {
   transactions: any[];
@@ -34,14 +33,14 @@ export class UnconfirmedTransactionsTableComponent extends React.Component<Uncon
             >
               <div className="bi-blocks-table__cell bi-table__cell bi-tokens-table__cell">
                 <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
-                  <FormattedMessage id="common.token.id" />
+                  <FormattedMessage id="common.transaction.txHash" />
                 </div>
 
                 <Link
-                  to={`/transactions/${transaction.id}`}
-                  title={transaction.id}
+                  to={`/transactions/${transaction.hash}`}
+                  title={transaction.hash}
                 >
-                  {transaction.id.slice(0, 10)}
+                  {ellipsis({ startLength: 4, endLength: 4 })(transaction.hash)}
                 </Link>
               </div>
 
@@ -49,34 +48,56 @@ export class UnconfirmedTransactionsTableComponent extends React.Component<Uncon
                 <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
                   <FormattedMessage id="components.unconfirmed-transactions.creation-timestamp" />
                 </div>
-                <TimestampComponent timestamp={transaction.creationTimestamp} />
+
+                <Link
+                  to={`/block/${parseInt(transaction.blockNumber, 16)}`}
+                  title={parseInt(transaction.blockNumber, 16).toString()}
+                >
+                  {parseInt(transaction.blockNumber, 16)}
+                </Link>
+
               </div>
 
               <div className="bi-blocks-table__cell bi-table__cell bi-tokens-table__cell">
                 <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
                   <FormattedMessage id="components.unconfirmed-transactions.inputs-quantity" />
                 </div>
-                {transaction.inputs.length}
+
+                <Link
+                  to={`/block/${transaction.from}`}
+                  title={transaction.from}
+                >
+                  {ellipsis({ startLength: 4, endLength: 4 })(transaction.from)}
+                </Link>
               </div>
 
               <div className="bi-blocks-table__cell bi-table__cell bi-tokens-table__cell">
                 <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
                   <FormattedMessage id="components.unconfirmed-transactions.outputs-quantity" />
                 </div>
-
-                {transaction.outputs.length}
+                <Link
+                  to={`/block/${transaction.to}`}
+                  title={transaction.to}
+                >
+                  {ellipsis({ startLength: 4, endLength: 4 })(transaction.to)}
+                </Link>
               </div>
-
               <div className="bi-blocks-table__cell bi-table__cell  bi-tokens-table__cell">
                 <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
                   <FormattedMessage id="common.block.size" />
                 </div>
 
                 <span className="u-word-wrap u-word-wrap--ellipsis">
-                  {formatNumberMetricPrefix(transaction.size, {
-                    desiredFormat: 'k',
-                  })}
-                  B
+                  {parseInt(transaction.value, 16)}
+                </span>
+              </div>
+              <div className="bi-blocks-table__cell bi-table__cell  bi-tokens-table__cell">
+                <div className="bi-blocks-table__cell-name bi-tokens-table__cell-name">
+                  <FormattedMessage id="common.block.size" />
+                </div>
+
+                <span className="u-word-wrap u-word-wrap--ellipsis">
+                  {parseInt(transaction.gas, 16)}
                 </span>
               </div>
             </div>
