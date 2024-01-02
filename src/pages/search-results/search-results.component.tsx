@@ -85,7 +85,7 @@ class SearchResults extends React.Component<
     } else if (query?.length === 42) {
       return <Redirect to={`/addresses/${query}`} />;
     } else {
-      return <Redirect to={`/transactions/${query}`} />;
+      return <Redirect to={`/blocks/${query}`} />;
     }
   }
 

@@ -14,6 +14,7 @@ import { WidgetBody } from '../widget-body/widget-body.components';
 import { WIDGET_REFRESH_INTERVAL } from '../../../constants/global.constants';
 import useInterval from '../../../hooks/useInterval';
 import { ellipsis } from 'src/utils/formatter';
+import BigNumber from 'bignumber.js';
 
 export const WidgetBlocks = ({ getBlocks, blocks }: any): JSX.Element => {
   useInterval(() => {
@@ -31,12 +32,13 @@ export const WidgetBlocks = ({ getBlocks, blocks }: any): JSX.Element => {
           id,
           hash,
           txsCount,
+          blockReward
         }: any
       ) => {
         return [
           ...acc,
           {
-            height: { value: number, link: true, linkValue: `/blocks/${hash}` },
+            height: { value: number, link: true, linkValue: `/blocks/${number}` },
             timestamp: {
               value: <TimestampComponent vertical timestamp={parseInt(timestamp, 16)*1000 } />,
             },
@@ -52,7 +54,7 @@ export const WidgetBlocks = ({ getBlocks, blocks }: any): JSX.Element => {
               value: txsCount,
             },
             minerReward: {
-              value:<>{parseInt(timestamp, 16)/1000}KB</>,
+              value:<>{new BigNumber(blockReward).div(10**18).toString()}</>,
             },
           },
         ];

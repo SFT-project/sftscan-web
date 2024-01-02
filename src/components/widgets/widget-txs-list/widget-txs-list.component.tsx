@@ -15,6 +15,7 @@ import { WidgetBody } from '../widget-body/widget-body.components';
 import useInterval from "../../../hooks/useInterval";
 import {WIDGET_REFRESH_INTERVAL} from "../../../constants/global.constants";
 import { ellipsis } from 'src/utils/formatter';
+import BigNumber from 'bignumber.js';
 
 export const WidgetTxsList = ({
   getTxsList,
@@ -54,8 +55,7 @@ export const WidgetTxsList = ({
             minerReward: {
               value: (
                 <span className="u-word-wrap u-word-wrap--ellipsis">
-                 {Number(value)}
-                 
+                 {new BigNumber(value).div(10**18).toString()}
                 </span>
               ),
             },

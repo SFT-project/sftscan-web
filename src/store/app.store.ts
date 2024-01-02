@@ -29,6 +29,7 @@ export interface AppState {
   struct: Record<string, any>;
   tokens: TokensState;
   txsList: UnconfirmedTransactions;
+  overview:any
 }
 
 let middlewares = [thunk];

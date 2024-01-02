@@ -18,9 +18,9 @@ export class BlockApiService {
 
   static getBlock(id: string): any {
     return axios
-      .get(`${environment.apiUrl}/getBlock`,{
+      .get(`${environment.apiUrl}/getBlockByHeight`,{
         params: {
-          hash:id
+          height:id
         },
       })
       .then((response: AxiosResponse) => {
@@ -31,7 +31,6 @@ export class BlockApiService {
             `Block api service. Request: ${BlockApiService.apiUrl}/${id}.`
           );
         }
-
         return response.data;
       });
   }
